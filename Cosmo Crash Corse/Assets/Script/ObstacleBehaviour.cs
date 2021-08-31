@@ -10,7 +10,7 @@ public class ObstacleBehaviour : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -23,6 +23,10 @@ public class ObstacleBehaviour : MonoBehaviour
         {
             Destroy(player.gameObject);
         }
-      
+
+        else if (other.tag == "Bullet")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

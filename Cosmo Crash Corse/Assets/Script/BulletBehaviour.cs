@@ -16,14 +16,20 @@ public class BulletBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
        
-        if (other.name == "Astroids")
+        if (other.tag == "Enemy")
         {
             Debug.Log("Hit");
             Destroy(gameObject);
         }
-        else if (other.name == "Player")
+        else if (other.tag == "Player")
         {
             Debug.Log("Player Shot");
+        }
+
+        else if (other.tag == "Border")
+        {
+            Debug.Log("Bullet Off Screen");
+            Destroy(this.gameObject);
         }
 
     }

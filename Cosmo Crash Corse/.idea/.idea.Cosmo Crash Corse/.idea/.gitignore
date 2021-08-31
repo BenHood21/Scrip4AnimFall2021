@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.Cosmo Crash Corse.iml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Users\Benjamin Hood\Documents\GitRepo\Scrip4AnimFall2021\Cosmo Crash Corse\.idea\.idea.Cosmo Crash Corse\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
