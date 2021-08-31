@@ -9,6 +9,7 @@
 [Bb]uilds/
 [Ll]ogs/
 [Mm]emoryCaptures/
+[P]ackages/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
@@ -63,3 +64,4 @@ crashlytics-build.properties
 
 
 2670/Packages/
+Cosmo Crash Corse/Packages/
