@@ -18,12 +18,12 @@ public class AmmoTextScript : MonoBehaviour
    {
       if (ammoAmount > 0)
       {
-         text.text = "Ammo: " + ammoAmount;
+         text.text = "" + ammoAmount;
       }
 
       else
       {
-         text.text = "Out of Ammo!";
+         text.text = "0";
       }
    }
 }
