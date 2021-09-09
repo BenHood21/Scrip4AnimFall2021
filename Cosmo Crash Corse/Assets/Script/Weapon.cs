@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab;
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && AmmoTextScript.ammoAmount > 0)
         {
             Shoot();
         }
@@ -16,6 +16,7 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
+        AmmoTextScript.ammoAmount -= 1;
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 }
