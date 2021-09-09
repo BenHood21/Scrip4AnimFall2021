@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1508433377227669605}
   - component: {fileID: 1508433377227669602}
   - component: {fileID: 3228251337248296879}
+  - component: {fileID: -389415737185407262}
   m_Layer: 0
   m_Name: Ammo_Pickup
   m_TagString: Untagged
@@ -94,9 +95,22 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-389415737185407262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508433377227669604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2864b6b0f4479894abf51096d272e283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpSpeed: 5

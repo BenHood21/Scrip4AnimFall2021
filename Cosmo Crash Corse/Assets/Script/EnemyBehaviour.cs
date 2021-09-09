@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-public class ObstacleBehaviour : MonoBehaviour
+public class EnemyBehaviour : MonoBehaviour
 {
     public float enemySpeed = 15f;
     private GameObject player;

@@ -3,19 +3,28 @@
 public class SpawnObstacles : MonoBehaviour
 {
    public GameObject obstacle;
+   public GameObject powerUp;
    public float maxX;
    public float minX;
    public float maxY;
    public float minY;
-   public float timeBetweenSpawn;
-   private float spawnTime;
 
-    void Update()
+   public float enemyTimeBetweenSpawn;
+   private float enemySpawnTime;
+   public float powerUpTimeBetweenSpawn;
+   private float powerUpSpawnTime;
+   void Update()
    {
-       if (Time.time > spawnTime)
+       if (Time.time > enemySpawnTime)
        {
            Spawn();
-           spawnTime = Time.time + timeBetweenSpawn;
+           enemySpawnTime = Time.time + enemyTimeBetweenSpawn;
+       }
+
+       if (Time.time > powerUpSpawnTime)
+       {
+           SpawnPowerUp();
+           powerUpSpawnTime = Time.time + powerUpTimeBetweenSpawn;
        }
    }
 
@@ -25,6 +34,13 @@ public class SpawnObstacles : MonoBehaviour
         float randomX = UnityEngine.Random.Range(minX, maxX);
 
         Instantiate(obstacle, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+    }
 
+    void SpawnPowerUp()
+    {
+        float randomY = UnityEngine.Random.Range(minY, maxY);
+        float randomX = UnityEngine.Random.Range(minX, maxX);
+        
+        Instantiate(powerUp, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
     }
 }
