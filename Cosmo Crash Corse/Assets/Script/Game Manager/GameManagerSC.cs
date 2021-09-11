@@ -2,10 +2,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverControl : MonoBehaviour
+public class GameManagerSC : MonoBehaviour
 {
     public GameObject gameOverPanel;
 
+    private ScoreManager theScoreManager;
+
+    private void Start()
+    {
+        theScoreManager = FindObjectOfType<ScoreManager>();
+    }
 
     void Update()
     {
@@ -17,7 +23,10 @@ public class GameOverControl : MonoBehaviour
     
     public void Restart()
     {
+        theScoreManager.scoreIncreasing = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+     
     }
 }
 

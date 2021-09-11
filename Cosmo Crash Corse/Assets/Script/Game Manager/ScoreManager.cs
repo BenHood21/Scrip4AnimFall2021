@@ -1,17 +1,34 @@
 ﻿
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
    public Text scoreText;
-   private float score;
+   public Text highScoreText;
+
+   public float scoreCount;
+   public float highScoreCount;
+
+   public float pointsPerSecond;
+   public bool scoreIncreasing;
+
+ 
 
    private void Update()
    {
-      if (GameObject.FindGameObjectWithTag("Player") != null)
+      if (scoreIncreasing)
       {
-         score += 1 * Time.deltaTime;
-         scoreText.text = ((int) score).ToString();
+         scoreCount += pointsPerSecond * Time.deltaTime;
       }
+
+      if (scoreCount > highScoreCount)
+      {
+         highScoreCount = scoreCount;
+      }
+      
+      scoreText.text = "Score: " + Mathf.Round (scoreCount);
+      highScoreText.text = "High Score: " + Mathf.Round (highScoreCount);
+
    }
 }
