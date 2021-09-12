@@ -6,8 +6,12 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public float enemySpeed = 15f;
     private GameObject player;
+    private GameObject enemy;
+
+    public bool gameOver = false;
     void Start()
     {
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
         player = GameObject.FindGameObjectWithTag("Player");
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
@@ -30,6 +34,8 @@ public class EnemyBehaviour : MonoBehaviour
 
         else if (other.tag == "Player")
         {
+            gameOver = true;
+            Debug.Log("Game Over!");
             Destroy(player.gameObject);
         }
 
