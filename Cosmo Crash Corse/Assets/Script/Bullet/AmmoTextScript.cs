@@ -8,12 +8,12 @@ public class AmmoTextScript : MonoBehaviour
 {
    public Text text;
    public static int ammoAmount = 0;
-   public int ammoMax;
+   public bool ammoMax = true;
    private void Start()
    {
       text = GetComponent<Text>();
 
-      while (ammoMax < 24)
+      while (ammoMax = true)
       {
           if (ammoAmount > 0)
                {
@@ -24,6 +24,14 @@ public class AmmoTextScript : MonoBehaviour
                {
                   text.text = "0";
                }
+      }
+   }
+
+   private void Update()
+   {
+      if ((ammoAmount = 24) != 0)
+      {
+         text.text = "24";
       }
    }
 }
