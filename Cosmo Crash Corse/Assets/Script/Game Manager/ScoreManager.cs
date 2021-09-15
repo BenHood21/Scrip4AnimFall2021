@@ -13,7 +13,13 @@ public class ScoreManager : MonoBehaviour
    public float pointsPerSecond;
    public bool scoreIncreasing;
 
- 
+   private void Start()
+   {
+      if (PlayerPrefs.HasKey("HighScore"))
+      {
+         highScoreCount = PlayerPrefs.GetFloat("HighScore");
+      }
+   }
 
    private void Update()
    {
@@ -25,6 +31,7 @@ public class ScoreManager : MonoBehaviour
       if (scoreCount > highScoreCount)
       {
          highScoreCount = scoreCount;
+         PlayerPrefs.SetFloat("HighScore", highScoreCount);
       }
       
       scoreText.text = "Score: " + Mathf.Round (scoreCount);
