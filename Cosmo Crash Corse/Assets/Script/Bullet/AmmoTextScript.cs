@@ -8,7 +8,7 @@ public class AmmoTextScript : MonoBehaviour
 {
    public Text text;
    public static int ammoAmount = 0;
-
+   public bool ammoMax = false;
    private void Start()
    {
       text = GetComponent<Text>();
@@ -16,14 +16,17 @@ public class AmmoTextScript : MonoBehaviour
 
    private void Update()
    {
-      if (ammoAmount > 0)
       {
-         text.text = "" + ammoAmount;
+         if (ammoAmount > 0)
+         {
+            text.text = "" + ammoAmount;
+         }
+         
+         else
+         {
+            text.text = "0";
+         }
       }
 
-      else
-      {
-         text.text = "0";
-      }
    }
 }
