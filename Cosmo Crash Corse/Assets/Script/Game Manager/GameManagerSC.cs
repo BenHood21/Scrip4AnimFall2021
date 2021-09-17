@@ -25,8 +25,11 @@ public class GameManagerSC : MonoBehaviour
     {
         theScoreManager.scoreIncreasing = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
-     
+    public void QuitGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
 
