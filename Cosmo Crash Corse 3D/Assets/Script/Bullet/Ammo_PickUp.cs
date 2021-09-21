@@ -7,7 +7,7 @@ public class Ammo_PickUp : MonoBehaviour
 {
     public float pickUpSpeed = 15f;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("Player"))
         {
@@ -18,7 +18,7 @@ public class Ammo_PickUp : MonoBehaviour
 
     private void Update()
     {
-        transform.position += new Vector3( 0 ,-pickUpSpeed * Time.deltaTime, 0);
+        transform.position += new Vector3( 0 , 0,-pickUpSpeed * Time.deltaTime);
 
     }
 }
