@@ -13,18 +13,18 @@ public class EnemyBehaviour : MonoBehaviour
     {
         enemy = GameObject.FindGameObjectWithTag("Enemy");
         player = GameObject.FindGameObjectWithTag("Player");
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        Rigidbody rb = GetComponent<Rigidbody>();
 
     }
 
 
     private void Update()
     {
-        transform.position += new Vector3( 0 ,-enemySpeed * Time.deltaTime, 0);
+        transform.position += new Vector3( 0 , 0,-enemySpeed * Time.deltaTime);
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
 
         if (other.tag == "Border")
@@ -38,10 +38,10 @@ public class EnemyBehaviour : MonoBehaviour
             Debug.Log("Game Over!");
             Destroy(player.gameObject);
         }
-
+        
         else if (other.tag == "Bullet")
         {
-            Destroy(this.gameObject);
+            Destroy(enemy.gameObject);
         }
     }
 }

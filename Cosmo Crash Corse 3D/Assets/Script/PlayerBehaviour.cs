@@ -4,21 +4,21 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
 {
     public float playerSpeed;
-    private Rigidbody2D rb;
+    private Rigidbody rb;
     private Vector2 playerDirection;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     { 
         float directionX = Input.GetAxisRaw("Horizontal"); 
-        playerDirection = new Vector2(directionX,0).normalized;
+        playerDirection = new Vector3(directionX,0,0).normalized;
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(playerDirection.x * playerSpeed, 0 );
+        rb.velocity = new Vector3(playerDirection.x * playerSpeed, 0, 0);
     }
 }

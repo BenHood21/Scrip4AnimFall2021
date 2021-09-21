@@ -2,7 +2,7 @@
 
 public class SpawnObstacles : MonoBehaviour
 {
-   public GameObject obstacle;
+   public GameObject enemy;
    public GameObject powerUp;
    public float maxX;
    public float minX;
@@ -33,7 +33,7 @@ public class SpawnObstacles : MonoBehaviour
         float randomY = UnityEngine.Random.Range(minY, maxY);
         float randomX = UnityEngine.Random.Range(minX, maxX);
 
-        Instantiate(obstacle, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+        Instantiate(enemy, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
     }
 
     void SpawnPowerUp()

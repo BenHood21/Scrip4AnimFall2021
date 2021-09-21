@@ -6,14 +6,14 @@ using UnityEngine;
 public class BulletBehaviour : MonoBehaviour
 {
     public float speed = 20f;
-    public Rigidbody2D rb;
+    public Rigidbody rb;
 
     void Start()
     {
         rb.velocity = transform.up * speed;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
        
         if (other.tag == "Enemy")
