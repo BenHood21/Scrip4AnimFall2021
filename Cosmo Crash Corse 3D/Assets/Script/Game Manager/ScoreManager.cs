@@ -10,11 +10,15 @@ public class ScoreManager : MonoBehaviour
    public float scoreCount;
    public float highScoreCount;
 
+   public int riseSpeed = 1;
+   public int scoreThreshold = 2;
+
    public float pointsPerSecond;
-   public bool scoreIncreasing;
+   public bool scoreIncreasing = true;
 
    private void Start()
    {
+      FindObjectOfType<GameManagerSC>().IncreaseSpawnSpeed();
       if (PlayerPrefs.HasKey("HighScore"))
       {
          highScoreCount = PlayerPrefs.GetFloat("HighScore");
@@ -23,6 +27,7 @@ public class ScoreManager : MonoBehaviour
 
    private void Update()
    {
+     
       if (scoreIncreasing)
       {
          scoreCount += pointsPerSecond * Time.deltaTime;
@@ -36,6 +41,5 @@ public class ScoreManager : MonoBehaviour
       
       scoreText.text = "Score: " + Mathf.Round (scoreCount);
       highScoreText.text = "High Score: " + Mathf.Round (highScoreCount);
-
    }
 }
