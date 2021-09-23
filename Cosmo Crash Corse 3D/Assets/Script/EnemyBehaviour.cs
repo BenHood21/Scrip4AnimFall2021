@@ -41,7 +41,7 @@ public class EnemyBehaviour : MonoBehaviour
         
         else if (other.tag == "Bullet")
         {
-            Destroy(enemy.gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

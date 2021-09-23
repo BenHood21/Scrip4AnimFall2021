@@ -19,7 +19,7 @@ public class BulletBehaviour : MonoBehaviour
         if (other.tag == "Enemy")
         {
             Debug.Log("Hit");
-            Destroy(gameObject);
+            Destroy(other.gameObject);
         }
         else if (other.tag == "Player")
         {

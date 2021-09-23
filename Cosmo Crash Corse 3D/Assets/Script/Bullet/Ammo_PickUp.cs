@@ -11,7 +11,7 @@ public class Ammo_PickUp : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            AmmoTextScript.ammoAmount += 6;
+            AmmoTextScript.ammoAmount += 2;
             Destroy(gameObject);
         }
     }
