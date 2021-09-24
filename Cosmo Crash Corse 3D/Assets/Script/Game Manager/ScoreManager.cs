@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
 
    private void Start()
    {
-      FindObjectOfType<GameManagerSC>().IncreaseSpawnSpeed();
+     // FindObjectOfType<GameManagerSC>().IncreaseSpawnSpeed();
       if (PlayerPrefs.HasKey("HighScore"))
       {
          highScoreCount = PlayerPrefs.GetFloat("HighScore");
@@ -27,13 +27,12 @@ public class ScoreManager : MonoBehaviour
 
    private void Update()
    {
-     
       if (scoreIncreasing)
       {
          scoreCount += pointsPerSecond * Time.deltaTime;
       }
 
-      if (scoreCount > highScoreCount)
+      if (scoreCount >= highScoreCount)
       {
          highScoreCount = scoreCount;
          PlayerPrefs.SetFloat("HighScore", highScoreCount);
