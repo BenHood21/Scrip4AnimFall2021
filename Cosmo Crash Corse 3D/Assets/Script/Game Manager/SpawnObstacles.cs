@@ -1,6 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.Events;
 
-public class SpawnObstacles : MonoBehaviour
+[CreateAssetMenu]
+public class SpawnObstacles : ScriptableObject
 {
    public GameObject enemy;
    public GameObject powerUp;
@@ -8,11 +11,27 @@ public class SpawnObstacles : MonoBehaviour
    public float minX;
    public float maxY;
    public float minY;
+   public bool canRun = true;
+   public float holdTime = 2f;
 
+   public UnityEvent startEvent;
    public float enemyTimeBetweenSpawn;
    private float enemySpawnTime;
    public float powerUpTimeBetweenSpawn;
    private float powerUpSpawnTime;
+   private WaitForSeconds wfs;
+
+   private IEnumerator Start()
+   {
+       wfs = new WaitForSeconds(holdTime);
+
+       while (canRun)
+       {
+           yield return wfs;
+           startEvent.Invoke();
+       }
+   }
+   
    void Update()
    {
        if (Time.time > enemySpawnTime)
