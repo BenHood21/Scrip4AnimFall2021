@@ -20,7 +20,7 @@ public class SpawnObstacles : ScriptableObject
    public float powerUpTimeBetweenSpawn;
    private float powerUpSpawnTime;
    private WaitForSeconds wfs;
-
+   
    private IEnumerator Start()
    {
        wfs = new WaitForSeconds(holdTime);
@@ -52,7 +52,8 @@ public class SpawnObstacles : ScriptableObject
         float randomY = UnityEngine.Random.Range(minY, maxY);
         float randomX = UnityEngine.Random.Range(minX, maxX);
 
-     //   Instantiate(enemy, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+
+        Instantiate(enemy, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
     }
 
     void SpawnPowerUp()
@@ -60,6 +61,6 @@ public class SpawnObstacles : ScriptableObject
         float randomY = UnityEngine.Random.Range(minY, maxY);
         float randomX = UnityEngine.Random.Range(minX, maxX);
         
-       // Instantiate(powerUp, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+        Instantiate(powerUp, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
     }
 }
