@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu]
-public class SpawnObstacles : ScriptableObject
+public class SpawnObstacles : MonoBehaviour
 {
    public GameObject enemy;
    public GameObject powerUp;
