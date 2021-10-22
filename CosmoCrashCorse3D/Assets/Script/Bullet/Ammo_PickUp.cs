@@ -14,6 +14,10 @@ public class Ammo_PickUp : MonoBehaviour
             AmmoTextScript.ammoAmount += 2;
             Destroy(gameObject);
         }
+        if (other.tag == "Border")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void Update()
