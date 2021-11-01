@@ -8,7 +8,8 @@ public class AmmoTextScript : MonoBehaviour
 {
    public Text text;
    public static int ammoAmount = 0;
-   public bool ammoMax = false;
+   [Range(0, 24)]public int minAmmo;
+   [Range(0, 24)]public int maxAmmo;
    private void Start()
    {
       text = GetComponent<Text>();

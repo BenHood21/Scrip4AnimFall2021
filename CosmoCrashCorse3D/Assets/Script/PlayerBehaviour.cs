@@ -35,7 +35,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-       
         rb.velocity = new Vector3(playerDirection.x * playerSpeed, 0, 0);
     }
 }
