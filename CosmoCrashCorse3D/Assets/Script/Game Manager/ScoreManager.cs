@@ -1,9 +1,11 @@
 ﻿
 using System;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
+   //Guided by Gamesplusjames video, "Unity Endless Runner Tutorial #12 - Score & High Score System" on youtube
    public Text scoreText;
    public Text highScoreText;
 
@@ -18,6 +20,8 @@ public class ScoreManager : MonoBehaviour
 
    private void Start()
    {
+      highScoreText.text = "0";
+      
      // FindObjectOfType<GameManagerSC>().IncreaseSpawnSpeed();
       if (PlayerPrefs.HasKey("HighScore"))
       {
@@ -41,4 +45,5 @@ public class ScoreManager : MonoBehaviour
       scoreText.text = "Score: " + Mathf.Round (scoreCount);
       highScoreText.text = "High Score: " + Mathf.Round (highScoreCount);
    }
+   
 }
