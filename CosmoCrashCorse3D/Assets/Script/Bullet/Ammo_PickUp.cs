@@ -23,6 +23,7 @@ public class Ammo_PickUp : MonoBehaviour
     private void Update()
     {
         transform.position += new Vector3( 0 , 0,-pickUpSpeed * Time.deltaTime);
+        transform.Rotate(new Vector3(0,150,0) *Time.deltaTime);
 
     }
 }

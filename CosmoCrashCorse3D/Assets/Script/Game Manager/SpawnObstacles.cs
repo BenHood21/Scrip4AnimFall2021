@@ -20,9 +20,10 @@ public class SpawnObstacles : MonoBehaviour
    public float powerUpTimeBetweenSpawn;
    private float powerUpSpawnTime;
    private WaitForSeconds wfs;
-   
+
    private IEnumerator Start()
    {
+
        wfs = new WaitForSeconds(holdTime);
 
        while (canRun)
