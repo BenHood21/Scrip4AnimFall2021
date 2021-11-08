@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
 
    private void Start()
    {
-      highScoreText.text = "0";
+   
       
      // FindObjectOfType<GameManagerSC>().IncreaseSpawnSpeed();
       if (PlayerPrefs.HasKey("HighScore"))
