@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FirepointScript : MonoBehaviour
 {
@@ -10,8 +11,9 @@ public class FirepointScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && AmmoTextScript.ammoAmount > 0)
         {
-            Shoot();
+           Shoot();
         }
+
     }
 
     void Shoot()

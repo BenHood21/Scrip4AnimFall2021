@@ -12,19 +12,22 @@ public class ScoreManager : MonoBehaviour
    public float scoreCount;
    public float highScoreCount;
 
-   public int riseSpeed = 1;
-   public int scoreThreshold = 2;
-
    public float pointsPerSecond;
    public bool scoreIncreasing = true;
 
    private void Start()
    {
+      SetValue(0);
       FindObjectOfType<GameManagerSC>().IncreaseSpawnSpeed();
       if (PlayerPrefs.HasKey("HighScore"))
       {
          highScoreCount = PlayerPrefs.GetFloat("HighScore");
       }
+   }
+
+   public void SetValue(float amount)
+   {
+      highScoreCount = 0;
    }
 
    private void Update()

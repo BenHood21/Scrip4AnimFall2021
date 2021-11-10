@@ -15,10 +15,7 @@ public class GameManagerSC : MonoBehaviour
     private void Start()
     {
         theScoreManager = FindObjectOfType<ScoreManager>();
-        
-        
     }
-    
 
     void Update()
     {
@@ -32,10 +29,13 @@ public class GameManagerSC : MonoBehaviour
     {
         theScoreManager.scoreIncreasing = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        AmmoTextScript.ammoAmount = 0;
+        
     }
 
     public void QuitGame()
     {
+        AmmoTextScript.ammoAmount = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
