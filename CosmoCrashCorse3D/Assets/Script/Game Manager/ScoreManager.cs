@@ -20,9 +20,7 @@ public class ScoreManager : MonoBehaviour
 
    private void Start()
    {
-   
-      
-     // FindObjectOfType<GameManagerSC>().IncreaseSpawnSpeed();
+      FindObjectOfType<GameManagerSC>().IncreaseSpawnSpeed();
       if (PlayerPrefs.HasKey("HighScore"))
       {
          highScoreCount = PlayerPrefs.GetFloat("HighScore");
