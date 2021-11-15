@@ -32,6 +32,10 @@ public class ScoreManager : MonoBehaviour
 
    private void Update()
    {
+      if (GameObject.FindGameObjectWithTag("Player") == null)
+      {
+         
+      }
       if (scoreIncreasing)
       {
          scoreCount += pointsPerSecond * Time.deltaTime;

@@ -22,12 +22,12 @@ public class GameManagerSC : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player") == null)
         {
             gameOverPanel.SetActive(true);
+            theScoreManager.scoreIncreasing = false;
         }
     }
     
     public void Restart()
     {
-        theScoreManager.scoreIncreasing = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         AmmoTextScript.ammoAmount = 0;
         
@@ -37,6 +37,7 @@ public class GameManagerSC : MonoBehaviour
     {
         AmmoTextScript.ammoAmount = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+       
     }
 
     public void IncreaseSpawnSpeed()
