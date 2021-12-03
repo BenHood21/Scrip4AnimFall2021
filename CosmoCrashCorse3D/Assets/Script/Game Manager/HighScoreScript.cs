@@ -1,9 +1,10 @@
-﻿
 using System;
-using System.Security.Cryptography.X509Certificates;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class ScoreManager : MonoBehaviour
+
+public class HighScoreScript : ScriptableObject
 {
    //Guided by Gamesplusjames video, "Unity Endless Runner Tutorial #12 - Score & High Score System" on youtube
    public Text scoreText;
@@ -32,10 +33,6 @@ public class ScoreManager : MonoBehaviour
 
    private void Update()
    {
-      if (GameObject.FindGameObjectWithTag("Player") == null)
-      {
-         
-      }
       if (scoreIncreasing)
       {
          scoreCount += pointsPerSecond * Time.deltaTime;
@@ -50,5 +47,5 @@ public class ScoreManager : MonoBehaviour
       scoreText.text = "Score: " + Mathf.Round (scoreCount);
       highScoreText.text = "High Score: " + Mathf.Round (highScoreCount);
    }
-   
 }
+
