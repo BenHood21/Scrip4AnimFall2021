@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: -3270834789232462163}
   - component: {fileID: 3605451226459851451}
   - component: {fileID: -6067185528594298527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 592664080621265513}
   - component: {fileID: 1929802415694502969}
   - component: {fileID: 3566390031902043909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,9 +178,9 @@ GameObject:
   - component: {fileID: 9176593916213025945}
   - component: {fileID: 2278884289690790479}
   - component: {fileID: 4823140158196677427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pick_Ups
-  m_TagString: Untagged
+  m_TagString: Pickups
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

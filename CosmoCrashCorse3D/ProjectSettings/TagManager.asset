@@ -7,16 +7,18 @@ TagManager:
   - Border
   - Enemy
   - Bullet
+  - PlayerBoarder
+  - Pickups
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Pickups
+  - Enemy
+  - Boarders
   - 
   - 
   - 
